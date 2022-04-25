@@ -30,7 +30,8 @@ const checkNPM = async (arrPackages) => {
         pack.publish = new Date(json[pack.version]);
         pack.warning = pack.publish.valueOf() > julyTheFourth;
         pack.publish = pack.publish.toLocaleDateString()
-        console.log(`${i + 1}/${arrPackages.length}\t:\t${pack.package}@${pack.versionFull}\t:\t${pack.publish}\t:\twarning: ${pack.warning}`);
+        const log = `${i + 1}/${arrPackages.length}\t:\t${pack.package}@${pack.versionFull}\t:\t${pack.publish}\t:\twarning: ${pack.warning}`
+        pack.warning ? console.log('\x1b[31m%s\x1b[0m', log) : console.log(log);
         if (stderr?.length > 0) {
             console.log("stderr: " + stderr);
         }
