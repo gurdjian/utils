@@ -19,7 +19,6 @@ const packages = [...packagesUnique]
     unlock: (pjson.dependencies[pack] || pjson.devDependencies[pack]).includes('^'),
     versionFull: pjson.dependencies[pack] || pjson.devDependencies[pack]
   }))
-  .filter((pack) => !pack.package.includes("@front") ) 
 
 console.table(packages);
 
