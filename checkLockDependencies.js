@@ -6,7 +6,7 @@ const packageLockFile = require('./package-lock.json')
 const print = (result = []) => fs.appendFileSync('./report.txt', `${result.join('\n')}\n`)
 
 // comment next line if you haven't inner or non-npm packages
-const innerPackageName = '@kapun'
+const innerPackageName = '@name'
 const deadline = new Date('2022-02-23').valueOf()
 
 const deps = Object.keys(packageLockFile.dependencies)
