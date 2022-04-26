@@ -21,7 +21,7 @@ const packages = deps
 const checkNPM = async (arrPackages) => {
   const warnPackages = []
 
-  for (let i = 0, { length } = arrPackages; i < arrPackages.length; i++) {
+  for (let i = 0, { length } = arrPackages; i < length; i++) {
     const pack = arrPackages[i]
     const { stdout, stderr } = await exec(`npm view ${pack.package}@${pack.version} time -json`)
     const json = JSON.parse(stdout)
