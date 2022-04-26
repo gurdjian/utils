@@ -5,14 +5,14 @@ const packageLockFile = require('./package-lock.json')
 
 const print = (result = []) => fs.appendFileSync('./report.txt', `${result.join('\n')}\n`)
 
-// comment next line if you haven't inner or non-npm packages
-const innerPackageName = '@name'
+// uncomment next line and change the name if you have inner or non-npm packages
+// const innerPackageName = '@name'
 const deadline = new Date('2022-02-23').valueOf()
 
 const deps = Object.keys(packageLockFile.dependencies)
 const packages = deps
-// comment next line if you haven't inner or non-npm packages
-  .filter(name => !name.startsWith(innerPackageName))
+// uncomment next line and change the name if you have inner or non-npm packages
+//  .filter(name => !name.startsWith(innerPackageName))
   .map(pack => ({
     package: pack,
     version: packageLockFile.dependencies[pack].version,
