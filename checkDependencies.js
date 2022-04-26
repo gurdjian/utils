@@ -1,7 +1,7 @@
 const fs = require("fs")
 const util = require("util")
 const exec = util.promisify(require("child_process").exec)
-const pjson = require("../package.json")
+const pjson = require("./package.json")
 
 const print = (result = []) => fs.appendFileSync('./report.txt', `—————\n${result.join('\n')}\n`)
 
