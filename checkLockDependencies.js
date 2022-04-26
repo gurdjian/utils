@@ -11,10 +11,10 @@ const deadline = new Date('2022-02-23').valueOf()
 
 const deps = Object.keys(packageLockFile.dependencies)
 const packages = deps
-// uncomment next line and change the name if you have inner or non-npm packages
+// uncomment next line if you have inner or non-npm packages
 //  .filter(name => !name.startsWith(innerPackageName))
-  .map(pack => ({
-    package: pack,
+  .map(package => ({
+    package,
     version: packageLockFile.dependencies[pack].version,
   }))
 
